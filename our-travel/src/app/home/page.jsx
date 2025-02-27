@@ -102,7 +102,7 @@ export default function Home() {
         <SearchBar />
       </div>
 
-      <div className={`${styles.placeList} mt-9 ms-4 overflow-auto`}>
+      <div className={`${styles.hideTheOverflow} mt-9 ms-4 overflow-auto`}>
         <ol className="flex justify-center overflow-auto gap-x-15">
           {listPlace.map((isi, isiIndex) => (
             <li key={isiIndex}>
@@ -122,7 +122,7 @@ export default function Home() {
             </li>
           </ol>
 
-          <div className="imageContainer flex justify-center gap-x-8 mt-5 overflow-auto">
+          <div className={`imageContainer flex justify-center gap-x-8 mt-5 overflow-auto ${styles.hideTheOverflow}`}>
             {place.map((isi, index) => (
               <div
                 className="imageDestinationPlace relative w-[280px]"
