@@ -4,6 +4,7 @@ import { FaUserLarge } from "react-icons/fa6";
 import { IoMdAirplane } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { BsLockFill } from "react-icons/bs";
+import Link from "next/link";
 
 export default function page() {
   return (
@@ -76,12 +77,14 @@ export default function page() {
               </div>
 
               <div className="submitbutton mt-20">
-                <button
-                  type="button"
-                  className="w-full max-w-sm min-w-[200px] text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring focus:outline-none focus:ring-black dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-pointer"
-                >
-                  Login
-                </button>
+                <Link href={"home"} passHref>
+                  <button
+                    type="button"
+                    className="w-full max-w-sm min-w-[200px] text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring focus:outline-none focus:ring-black dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-pointer"
+                  >
+                    Login
+                  </button>
+                </Link>
               </div>
             </div>
           </form>

@@ -5,6 +5,7 @@ import styles from "./home.module.css";
 import { IoMdAirplane } from "react-icons/io";
 import { IoSearchSharp } from "react-icons/io5";
 import Image from "next/image";
+import Link from "next/link";
 
 import Herengracht from "../../../public/assets/Places/Herengracht/Herengracht.jpeg";
 import NegeriDiAtasAwan from "../../../public/assets/Places/Negeri di atas awan/Negeri di atas awan.jpeg";
