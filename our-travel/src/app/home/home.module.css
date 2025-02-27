@@ -1,5 +1,12 @@
-.hideTheOverflow {
-  ::-webkit-scrollbar {
-    display: none;
-  }
+.scrollContainer {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
 }

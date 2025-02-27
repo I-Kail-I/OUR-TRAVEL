@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 import { BsLockFill } from "react-icons/bs";
 import Link from "next/link";
 
-export default function page() {
+export default function signIn() {
   return (
     <div className="min-h-screen bg-white flex justify-center">
       <div className="cardLoginContainer flex flex-col min-h-screen w-md shadow-2xl pb-6">

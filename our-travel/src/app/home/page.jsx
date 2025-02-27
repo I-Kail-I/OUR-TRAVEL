@@ -6,54 +6,20 @@ import { IoMdAirplane } from "react-icons/io";
 import { IoSearchSharp } from "react-icons/io5";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import Herengracht from "../../../public/assets/Places/Herengracht/Herengracht.jpeg";
 import NegeriDiAtasAwan from "../../../public/assets/Places/Negeri di atas awan/Negeri di atas awan.jpeg";
-
-const listPlace = [
-  {
-    placeName: "All",
-  },
-  {
-    placeName: "America",
-  },
-  {
-    placeName: "Europe",
-  },
-  {
-    placeName: "Asia",
-  },
-  {
-    placeName: "Africa",
-  },
-  {
-    placeName: "Middle East",
-  },
-];
-
-const place = [
-  {
-    Image: Herengracht,
-    title: "Herengracht",
-    text: "Amsterdam, Netherlands",
-  },
-  {
-    Image: NegeriDiAtasAwan,
-    title: "Negeri di atas awan",
-    text: "Toraja, Indonesia",
-  },
-];
 
 const SearchBar = ({ placeholder = "Discover your next destination" }) => {
   const [query, setQuery] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log("Searching for:", query);
   };
 
   return (
-    <form onSubmit={handleSearch} className="relative ">
+    <form onSubmit={handleSearch} className="relative">
       <div className="rounded-full bg-gray-200 flex items-center w-100 px-4 py-4 mt-5">
         <button type="button" className="mr-2 text-gray-500">
           <IoSearchSharp size={20} />
@@ -74,6 +40,40 @@ const SearchBar = ({ placeholder = "Discover your next destination" }) => {
 };
 
 export default function Home() {
+  const listPlace = [
+    {
+      placeName: "All",
+    },
+    {
+      placeName: "America",
+    },
+    {
+      placeName: "Europe",
+    },
+    {
+      placeName: "Asia",
+    },
+    {
+      placeName: "Africa",
+    },
+    {
+      placeName: "Middle East",
+    },
+  ];
+
+  const place = [
+    {
+      Image: Herengracht,
+      title: "Herengracht",
+      text: "Amsterdam, Netherlands",
+    },
+    {
+      Image: NegeriDiAtasAwan,
+      title: "Negeri di atas awan",
+      text: "Toraja, Indonesia",
+    },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header section */}
@@ -98,15 +98,18 @@ export default function Home() {
       </div>
 
       {/* Search Bar */}
-      <div className="searchbar w-full justify-center flex">
+      <div className="searchbar w-full justify-center items-center flex">
         <SearchBar />
       </div>
 
-      <div className={`${styles.hideTheOverflow} mt-9 ms-4 overflow-auto`}>
-        <ol className="flex justify-center overflow-auto gap-x-15">
+      {/* Place List */}
+      <div className={`${styles.scrollContainer} mt-9 px-4 w-full text-center`}>
+        <ol className="flex gap-x-8 min-w-full w-full justify-center">
           {listPlace.map((isi, isiIndex) => (
-            <li key={isiIndex}>
-              <button className="cursor-pointer">{isi.placeName} </button>
+            <li key={isiIndex} className="flex-none">
+              <button className="cursor-pointer px-2 py-1 hover:bg-gray-100 rounded-md">
+                {isi.placeName}
+              </button>
             </li>
           ))}
         </ol>
@@ -115,39 +118,41 @@ export default function Home() {
       {/* Popular Destination Section */}
       <div className="placeContent">
         <div className="popularDestinationSection mt-7">
-          <ol className="flex justify-between ms-15 me-15 mt-12">
+          <ol className="flex justify-between px-6 mt-12">
             <li>Popular Destination</li>
             <li>
               <button className="cursor-pointer">See All</button>
             </li>
           </ol>
 
-          <div className={`imageContainer flex justify-center gap-x-8 mt-5 overflow-auto ${styles.hideTheOverflow}`}>
-            {place.map((isi, index) => (
-              <div
-                className="imageDestinationPlace relative w-[280px]"
-                key={index}
-              >
-                <Image
-                  className="rounded-2xl object-cover"
-                  src={isi.Image}
-                  alt={isi.title}
-                  width={300}
-                  style={{ height: "380px" }}
-                />
-                <div className="textContainer absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/75 p-3 rounded-2xl w-[200px] text-center">
-                  <h1
-                    className="font-semibold text-lg"
-                    style={{ fontFamily: "Paytone One" }}
-                  >
-                    {isi.title}
-                  </h1>
-                  <span className="font-light text-sm block mt-1">
-                    {isi.text}
-                  </span>
+          <div className={`${styles.scrollContainer} px-6 mt-5 flex justify-center`}>
+            <div className="flex gap-x-6 min-w-min">
+              {place.map((isi, index) => (
+                <div
+                  className="imageDestinationPlace relative w-[280px]"
+                  key={index}
+                >
+                  <Image
+                    className="rounded-2xl object-cover"
+                    src={isi.Image}
+                    alt={isi.title}
+                    width={300}
+                    style={{ height: "380px" }}
+                  />
+                  <div className="textContainer absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/75 p-3 rounded-2xl w-[200px] text-center">
+                    <h1
+                      className="font-semibold text-lg"
+                      style={{ fontFamily: "Paytone One" }}
+                    >
+                      {isi.title}
+                    </h1>
+                    <span className="font-light text-sm block mt-1">
+                      {isi.text}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
