@@ -103,7 +103,10 @@ export default function Home() {
       </div>
 
       {/* Place List */}
-      <div className={`${styles.scrollContainer} mt-9 px-4 w-full text-center`}>
+      <div
+        className={`${styles.scrollContainer} mt-9 px-4 w-full `}
+        id={styles.placeListContainer}
+      >
         <ol className="flex gap-x-8 min-w-full w-full justify-center">
           {listPlace.map((isi, isiIndex) => (
             <li key={isiIndex} className="flex-none">
@@ -120,12 +123,15 @@ export default function Home() {
         <div className="popularDestinationSection mt-7">
           <ol className="flex justify-between px-6 mt-12">
             <li>Popular Destination</li>
+
             <li>
-              <button className="cursor-pointer">See All</button>
+              <button className="cursor-pointer hover:text-gray-500 transition-colors">
+                See All
+              </button>
             </li>
           </ol>
 
-          <div className={`${styles.scrollContainer} px-6 mt-5 flex justify-center`}>
+          <div className={`${styles.scrollContainer} px-6 mt-5 flex`}>
             <div className="flex gap-x-6 min-w-min">
               {place.map((isi, index) => (
                 <div

@@ -10,3 +10,9 @@
 .scrollContainer::-webkit-scrollbar {
   display: none;
 }
+
+@media (max-width: 786px) {
+  #placeListContainer {
+    text-align: none;
+  }
+}
