@@ -1,6 +1,6 @@
 "use client";
 
-import SignIn from "@/app/signIn/page";
+import SignIn from "@/components/navbar/navbar";
 
 export default function page() {
   return (

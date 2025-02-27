@@ -7,6 +7,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { MotionContext } from "framer-motion";
 
 import Herengracht from "../../../public/assets/Places/Herengracht/Herengracht.jpeg";
 import NegeriDiAtasAwan from "../../../public/assets/Places/Negeri di atas awan/Negeri di atas awan.jpeg";
@@ -66,11 +67,13 @@ export default function Home() {
       Image: Herengracht,
       title: "Herengracht",
       text: "Amsterdam, Netherlands",
+      link: "/home/Herengracht",
     },
     {
       Image: NegeriDiAtasAwan,
       title: "Negeri di atas awan",
       text: "Toraja, Indonesia",
+      link: "/home/Negeri-di-atas-awan",
     },
   ];
 
@@ -138,24 +141,26 @@ export default function Home() {
                   className="imageDestinationPlace relative w-[280px]"
                   key={index}
                 >
-                  <Image
-                    className="rounded-2xl object-cover"
-                    src={isi.Image}
-                    alt={isi.title}
-                    width={300}
-                    style={{ height: "380px" }}
-                  />
-                  <div className="textContainer absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/75 p-3 rounded-2xl w-[200px] text-center">
-                    <h1
-                      className="font-semibold text-lg"
-                      style={{ fontFamily: "Paytone One" }}
-                    >
-                      {isi.title}
-                    </h1>
-                    <span className="font-light text-sm block mt-1">
-                      {isi.text}
-                    </span>
-                  </div>
+                  <Link href={isi.link} passHref>
+                    <Image
+                      className="rounded-2xl object-cover"
+                      src={isi.Image}
+                      alt={isi.title}
+                      width={300}
+                      style={{ height: "380px" }}
+                    />
+                    <div className="textContainer absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/75 p-3 rounded-2xl w-[200px] text-center">
+                      <h1
+                        className="font-semibold text-lg"
+                        style={{ fontFamily: "Paytone One" }}
+                      >
+                        {isi.title}
+                      </h1>
+                      <span className="font-light text-sm block mt-1">
+                        {isi.text}
+                      </span>
+                    </div>
+                  </Link>
                 </div>
               ))}
             </div>
