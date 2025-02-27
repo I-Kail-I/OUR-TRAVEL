@@ -1,6 +1,6 @@
 import SignIn from "@/app/signIn/page"
 
-export default function page() {
+export default function signIn() {
   return (
     <div>
       <SignIn />

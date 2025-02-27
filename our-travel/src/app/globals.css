@@ -1,1 +1,52 @@
 @import "tailwindcss";
+
+/* Palanquin Dark Font Family */
+@font-face {
+  font-family: "Palanquin Dark";
+  src: url("../../public/assets/fonts/Palanquin-Dark/PalanquinDark-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Palanquin Dark";
+  src: url("../../public/assets/fonts/Palanquin-Dark/PalanquinDark-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Palanquin Dark";
+  src: url("../../public/assets/fonts/Palanquin-Dark/PalanquinDark-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Palanquin Dark";
+  src: url("../../public/assets/fonts/Palanquin-Dark/PalanquinDark-Bold.ttf");
+  font-weight: 700;
+}
+
+/* Paytone One Font Family */
+@font-face {
+  font-family: "Paytone One";
+  src: url("../../public/assets/fonts/Paytone-One/PaytoneOne-Regular.ttf");
+  font-weight: 400;
+}
+
+/* Belanosima Font Family */
+@font-face {
+  font-family: "Belanosima";
+  src: url("../../public/assets/fonts/Belanosima/Belanosima-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Belanosima";
+  src: url("../../public/assets/fonts/Belanosima/Belanosima-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Belanosima";
+  src: url("../../public/assets/fonts/Belanosima/Belanosima-Bold.ttf");
+  font-weight: 700;
+}

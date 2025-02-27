@@ -35,25 +35,28 @@ export default function page() {
         <div className="inpuSection flex justify-center mt-14">
           <form action="" className="flex flex-col w-full px-8">
             <div className="inputSection gap-y-7 flex flex-col ">
-              <div className="w-full max-w-sm min-w-[200px]">
+              <div className="w-full max-w-sm min-w-[200px] relative">
+                <FaUserLarge className="absolute top-1/2 transform -translate-y-1/2 left-4 text-gray-400" />
                 <input
-                  className="w-full bg-transparent placeholder-gray-500 text-black text-sm border border-black rounded-2xl px-4 py-3 transition duration-300 ease focus:outline-none focus:border-slate-800 hover:border-slate-300 shadow-sm focus:shadow-lg"
+                  className="w-full bg-transparent placeholder-gray-500 text-black text-sm border border-black rounded-2xl px-4 py-3 pl-12 transition duration-300 ease focus:outline-none focus:border-slate-800 hover:border-slate-300 shadow-sm focus:shadow-lg"
                   type="text"
                   placeholder="Username"
                 />
               </div>
 
-              <div className="w-full max-w-sm min-w-[200px]">
+              <div className="w-full max-w-sm min-w-[200px] relative">
+                <MdEmail className="absolute top-1/2 transform -translate-y-1/2 left-4 text-gray-400" />
                 <input
-                  className="w-full bg-transparent placeholder-gray-500 text-black text-sm border border-black rounded-2xl px-4 py-3 transition duration-300 ease focus:outline-none focus:border-slate-800 hover:border-slate-300 shadow-sm focus:shadow-lg"
+                  className="w-full bg-transparent placeholder-gray-500 text-black text-sm border border-black rounded-2xl px-4 py-3 pl-12 transition duration-300 ease focus:outline-none focus:border-slate-800 hover:border-slate-300 shadow-sm focus:shadow-lg"
                   type="email"
                   placeholder="Enter your email address"
                 />
               </div>
 
-              <div className="w-full max-w-sm min-w-[200px]">
+              <div className="w-full max-w-sm min-w-[200px] relative">
+                <BsLockFill className="absolute top-1/2 transform -translate-y-1/2 left-4 text-gray-400" />
                 <input
-                  className="w-full bg-transparent placeholder-gray-500 text-black text-sm border border-black rounded-2xl px-4 py-3 transition duration-300 ease focus:outline-none focus:border-slate-800 hover:border-slate-300 shadow-sm focus:shadow-lg"
+                  className="w-full bg-transparent placeholder-gray-500 text-black text-sm border border-black rounded-2xl px-4 py-3 pl-12 transition duration-300 ease focus:outline-none focus:border-slate-800 hover:border-slate-300 shadow-sm focus:shadow-lg"
                   type="password"
                   placeholder="Password"
                 />
