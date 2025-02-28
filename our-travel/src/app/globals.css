@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Palanquin Dark Font Family */
 @font-face {
   font-family: "Palanquin Dark";
@@ -49,4 +54,13 @@
   font-family: "Belanosima";
   src: url("../../public/assets/fonts/Belanosima/Belanosima-Bold.ttf");
   font-weight: 700;
+}
+
+@font-face {
+  font-family: "Playpi";
+  src: url("../../public/assets/fonts/Platypi/Platypi-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Platypi Cursive";
+  src: url("../../public/assets/fonts/Platypi/Platypi-Italic-VariableFont_wght.ttf");
 }
