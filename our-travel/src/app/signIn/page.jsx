@@ -15,7 +15,7 @@ export default function signIn() {
             src={ImageLogin}
             layout="cover"
             alt="imageLogin"
-            className="relative z-10"
+            className="relative z-10 right-1"
           />
           <div className="logoPart flex items-center absolute bottom-0 left-60 transform -translate-x-0 translate-y-0 bg-white px-4 py-2 rounded-full shadow-md z-[5]">
             <IoMdAirplane className="text-xl mr-2 border-2 border-black rounded-2xl" />

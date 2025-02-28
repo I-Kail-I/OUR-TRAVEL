@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { usePathname } from "next/navigation";
@@ -26,7 +26,7 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if (pathname === "/signIn") {
+  if (pathname === "/signIn" || pathname === "/") {
     return null;
   }
 
@@ -47,7 +47,7 @@ function NavbarDesktop() {
       </div>
 
       <div className="flex items-center gap-18">
-        <FaBell className="text-xl cursor-pointer"/> 
+        <FaBell className="text-xl cursor-pointer" />
 
         <FaBookmark className="text-xl cursor-pointer" />
         <img
