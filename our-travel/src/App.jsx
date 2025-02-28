@@ -1,3 +1,0 @@
-import Navbar from "./components/navbar/navbar";
-
-// ...rest of your App.jsx code...

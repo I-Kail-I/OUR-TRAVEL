@@ -78,7 +78,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col mb-24 lg:mt-20 md:mb-0">
       {/* Header section */}
       <div className="header flex flex-col mb-8 mt-10">
         <div
