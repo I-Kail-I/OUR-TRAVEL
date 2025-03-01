@@ -1,14 +1,13 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import {
-  FaHome,
-  FaCompass,
-  FaBell,
-  FaBookmark,
-  FaSearch,
-} from "react-icons/fa";
+import { FaBell, FaBookmark, FaSearch } from "react-icons/fa";
+import { BsBookmark } from "react-icons/bs";
+import { LiaCompass } from "react-icons/lia";
+import { GoHome } from "react-icons/go";
+import { IoIosNotificationsOutline } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -62,28 +61,60 @@ function NavbarDesktop() {
 
 function NavBarPhone() {
   return (
-    <nav className="bg-cyan-500 px-5 py-3 h-19 flex shadow justify-center fixed bottom-0 w-full z-10">
-      <ul className="flex w-full max-w-3xl items-center justify-between text-white">
+    <nav className="bg-white px-5 py-12 h-19 flex shadow-2xl rounded-t-4xl shadow-black justify-center fixed bottom-0 w-full z-10">
+      <ul className="flex w-full max-w-3xl items-center justify-between text-white ms-10 gap-10">
         {/* Home */}
-        <li className="flex-none">
-          <button className="searchBar bg-white rounded-4xl flex h-10 items-center py-7 w-40 hover:bg-slate-200 hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer">
-            <FaHome size={34} className="text-blue-300 ms-4 font-light" />
-            <span className="text-2xl text-black ms-2 font-light">Home</span>
-          </button>
+        <li className="flex-none flex">
+          <Link href="/home" passHref>
+            <motion.button
+              className="cursor-pointer"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "keyframes", stiffness: 300 }}
+            >
+              <GoHome size={60} className="text-blue-300" />
+            </motion.button>
+          </Link>
         </li>
 
         {/* Explore */}
-        <li className="flex-none flex flex-col text-black items-center cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out">
-          <FaCompass size={34} />
+        <li className="flex-none flex">
+          <Link href="/explore" passHref>
+            <motion.button
+              className="cursor-pointer"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "keyframes", stiffness: 300 }}
+            >
+              <LiaCompass size={60} className="text-black font-light" />
+            </motion.button>
+          </Link>
         </li>
 
-        <li className="flex-none flex flex-col text-black items-center cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out">
-          <FaBookmark size={34} />
+        <li className="flex-none flex">
+          <Link href="/explore" passHref>
+            <motion.button
+              className="cursor-pointer"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "keyframes", stiffness: 300 }}
+            >
+              <BsBookmark size={40} className="text-black" />
+            </motion.button>
+          </Link>
         </li>
 
         {/* Notifications */}
-        <li className="flex-none flex flex-col text-black items-center cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out">
-          <FaBell size={34} />
+        <li className="flex-none flex">
+          <Link href="/explore" passHref>
+            <motion.button
+              className="cursor-pointer"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "keyframes", stiffness: 300 }}
+            >
+              <IoIosNotificationsOutline
+                size={60}
+                className="text-black font-light"
+              />
+            </motion.button>
+          </Link>
         </li>
       </ul>
     </nav>

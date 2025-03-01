@@ -4,6 +4,7 @@ const places = [
   { id: 1, name: "Herengracht", location: "Amsterdam, Netherlands" },
   { id: 2, name: "Eiffel Tower", location: "Paris, France" },
   { id: 3, name: "Iguazu Falls", location: "Argentina, Brazil" },
+  {id: 4, name: ""}
 ];
 
 export async function GET(request) {
