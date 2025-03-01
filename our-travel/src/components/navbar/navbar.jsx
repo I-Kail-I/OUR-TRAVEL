@@ -9,7 +9,6 @@ import { LiaCompass } from "react-icons/lia";
 import { GoHome } from "react-icons/go";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();

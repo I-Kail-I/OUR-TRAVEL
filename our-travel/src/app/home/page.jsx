@@ -8,8 +8,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Searchbar from "../../components/searchbar/searchbar";
-import TravelListingCardComponents from "../../components/travelListCard/travelListCard"; // Correct import path
-import { destinations } from "../data/detailsInfo/destinations";
 
 // Popular destination assets
 import HerengrachtDestination from "../../../public/assets/popularPlaces/Herengracht/Herengracht.jpeg";
@@ -64,8 +62,7 @@ export default function Home() {
       image: HerengrachtNature,
       title: "Herengracht",
       location: "Amsterdam, Netherlands",
-      link: "/nature/herengracht",
-      slug: "herengracht", 
+      slug: "herengracht",
     },
   ];
 
@@ -237,24 +234,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Travel Listings */}
-      <div className="travelListingsSection">
-        {destinations.map((listing) => (
-          <Link key={listing.slug} href={`/home/${listing.slug}`} passHref>
-            <a>
-              <TravelListingCardComponents
-                title={listing.title}
-                location={listing.location}
-                price={listing.price}
-                description={listing.description}
-                mainImage={listing.image}
-                thumbnailImage={listing.thumbnailImage}
-              />
-            </a>
-          </Link>
-        ))}
       </div>
     </div>
   );

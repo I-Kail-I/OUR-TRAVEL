@@ -1,9 +1,11 @@
 import React from "react";
 import {
-  IoChevronBackOutline,
   IoLocationOutline,
   IoHeartOutline,
 } from "react-icons/io5";
+import Link from "next/link";
+import Image from "next/image";
+import BackButton from "../backButton/backbutton";
 
 export default function TravelListingCardComponents({
   title,
@@ -14,32 +16,41 @@ export default function TravelListingCardComponents({
   thumbnailImage,
 }) {
   return (
-    <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-20">
-      {/* Header with back button and details text */}
+    <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg shadow-amber-700 overflow-hidden mt-5">
       <div className="p-4 flex justify-between items-center">
-        <div className="flex items-center">
-          <IoChevronBackOutline className="text-black text-xl mr-3" />
+        <div className="flex items-center cursor-pointer">
+          <BackButton />
           <span className="font-medium text-lg">Details</span>
         </div>
         <IoHeartOutline className="text-gray-500 text-xl" />
       </div>
 
-      {/* Main image */}
-      <div className="relative">
-        <img
-          src={mainImage}
-          alt={`${title} view`}
-          className="w-full h-64 object-cover"
-        />
+      <div className="relative h-64 w-full">
+        {mainImage && (
+          <img
+            src={typeof mainImage === "string" ? mainImage : mainImage.src}
+            alt={`${title} view`}
+            className="w-full h-full object-cover"
+          />
+        )}
 
-        {/* Thumbnail overlay */}
+        {/* Image */}
         <div className="absolute top-4 right-4">
           <div className="w-16 h-12 rounded-md overflow-hidden">
-            <img
-              src={thumbnailImage}
-              alt={`${title} thumbnail`}
-              className="w-full h-full object-cover"
-            />
+            {thumbnailImage && (
+              <Image
+                src={
+                  typeof thumbnailImage === "string"
+                    ? thumbnailImage
+                    : thumbnailImage.src
+                }
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+                alt={`${title} thumbnail`}
+                className="w-full h-full object-cover"
+              />
+            )}
           </div>
         </div>
       </div>
@@ -66,7 +77,7 @@ export default function TravelListingCardComponents({
         </div>
 
         {/* Description */}
-        <div className="text-gray-700 mb-4 text-sm max-h-32 overflow-y-auto">
+        <div className="text-gray-700 mb-4 text-lg max-h-32 overflow-y-auto ">
           <p>{description}</p>
         </div>
 
@@ -76,7 +87,7 @@ export default function TravelListingCardComponents({
             <span className="text-2xl font-bold">${price}</span>
             <span className="text-gray-500 text-sm">/person</span>
           </div>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+          <button className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer hover:bg-gray-400 duration-300">
             Booking Now
           </button>
         </div>
