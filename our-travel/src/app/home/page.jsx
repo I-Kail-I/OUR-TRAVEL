@@ -1,15 +1,15 @@
 "use client";
-
 import React, { useState } from "react";
 import styles from "./home.module.css";
 import { IoMdAirplane } from "react-icons/io";
-import { IoSearchSharp } from "react-icons/io5";
 import { FaBookmark, FaLocationCrosshairs } from "react-icons/fa6";
 import { CiBookmark } from "react-icons/ci";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Searchbar from "../../components/searchbar/searchbar";
+import TravelListingCardComponents from "../../components/travelListCard/travelListCard"; // Correct import path
+import { destinations } from "../data/detailsInfo/destinations";
 
 // Popular destination assets
 import HerengrachtDestination from "../../../public/assets/popularPlaces/Herengracht/Herengracht.jpeg";
@@ -36,31 +36,26 @@ export default function Home() {
       image: HerengrachtDestination,
       title: "Herengracht",
       text: "Amsterdam, Netherlands",
-      link: "/home/herengracht",
     },
     {
       image: NegeriDiAtasAwanDestination,
       title: "Negeri di atas awan",
       text: "Toraja, Indonesia",
-      link: "/home/negeri-di-atas-awan",
     },
     {
       image: EffielTowerDestination,
       title: "Eifell tower",
       text: "Paris, France",
-      link: "/home/eifell-tower",
     },
     {
       image: IguazuFallDestination,
       title: "Iguazu Falls",
       text: "Argentina Brazil",
-      link: "/home/iguazu-falls",
     },
     {
       image: KuilKinKakoDestination,
       title: "kinkako",
       text: "Kyoto, Japan",
-      link: "/home/kuil-kinkako",
     },
   ];
 
@@ -69,7 +64,8 @@ export default function Home() {
       image: HerengrachtNature,
       title: "Herengracht",
       location: "Amsterdam, Netherlands",
-      link: "/home/herengracht",
+      link: "/nature/herengracht",
+      slug: "herengracht", 
     },
   ];
 
@@ -83,7 +79,7 @@ export default function Home() {
           className="logoPart flex text-2xl w-full justify-center mb-10"
           style={{ fontFamily: "Julius Sans One" }}
         >
-          <IoMdAirplane className="mt-1 border-2 border-black rounded-full " />{" "}
+          <IoMdAirplane className="mt-1 border-2 border-black rounded-full" />{" "}
           <span>UR TRAVEL</span>
         </div>
 
@@ -139,36 +135,41 @@ export default function Home() {
         <div className="px-6 py-10 overflow-hidden">
           <div className={`${styles.scrollContainer} flex`}>
             <div className="flex gap-x-10 min-w-min px-10">
-              {popularDestinationSection.map((isi, index) => (
-                <motion.div
-                  className="imageDestinationPlace relative w-[280px] flex"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "keyframes", stiffness: 1 }}
-                  key={index}
-                >
-                  <Link href={isi.link} passHref>
-                    <Image
-                      className="rounded-2xl object-fill"
-                      src={isi.image}
-                      alt={isi.title}
-                      width={300}
-                      style={{ height: "380px" }}
-                    />
-                    <div className="textContainer absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/75 p-3 rounded-2xl w-[200px] text-center">
-                      <h1
-                        className="font-semibold text-lg"
-                        style={{ fontFamily: "Paytone One" }}
-                      >
-                        {isi.title}
-                      </h1>
+              {popularDestinationSection.map((isi, index) => {
+                const slug = isi.title.toLowerCase().replace(/ /g, "-");
 
-                      <span className="font-light text-sm block mt-1">
-                        {isi.text}
-                      </span>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
+                return (
+                  <motion.div
+                    className="imageDestinationPlace relative w-[280px] flex"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "keyframes", stiffness: 1 }}
+                    key={index}
+                  >
+                    <Link href={`/home/${slug}`} passHref>
+                      <Image
+                        className="rounded-2xl object-fill"
+                        src={isi.image}
+                        alt={isi.title}
+                        width={300}
+                        style={{ height: "380px" }}
+                      />
+
+                      <div className="textContainer absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/75 p-3 rounded-2xl w-[200px] text-center">
+                        <h1
+                          className="font-semibold text-lg"
+                          style={{ fontFamily: "Paytone One" }}
+                        >
+                          {isi.title}
+                        </h1>
+
+                        <span className="font-light text-sm block mt-1">
+                          {isi.text}
+                        </span>
+                      </div>
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -182,6 +183,7 @@ export default function Home() {
         >
           <ol className="flex justify-between px-6 mt-12">
             <li>Popular Nature</li>
+
             <li>
               <button className="cursor-pointer hover:text-gray-500 transition-colors">
                 See All
@@ -200,7 +202,7 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "keyframes ", stiffness: 100 }}
                 >
-                  <Link href={isi.link} passHref>
+                  <Link href={`/home/${isi.slug}`} passHref>
                     <Image
                       src={isi.image}
                       width={300}
@@ -214,30 +216,14 @@ export default function Home() {
                     onClick={() => setFilledSvg(!filledSvg)}
                   >
                     {filledSvg ? (
-                      <motion.div
-                        whileHover={{ scale: 1.2 }}
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ type: "keyframes", stiffness: 100 }}
-                        className="cursor-pointer"
-                      >
-                        <FaBookmark className="text-black" size={35} />
-                      </motion.div>
+                      <FaBookmark className="text-black" size={35} />
                     ) : (
-                      <motion.div
-                        whileHover={{ scale: 1.2 }}
-                        initial={{ scale: 1 }}
-                        animate={{ scale: 1 }}
-                        transition={{ type: "keyframes", stiffness: 100 }}
-                        className="cursor-pointer"
-                      >
-                        <CiBookmark className="text-black" size={35} />
-                      </motion.div>
+                      <CiBookmark className="text-black" size={35} />
                     )}
                   </div>
 
                   <div className="textContainer ms-2 mt-1 hover:text-zinc-500 transition-colors duration-200">
-                    <Link href={isi.link} passHref>
+                    <Link href={`/home/${isi.slug}`} passHref>
                       <h1 className="text-2xl font-bold">{isi.title}</h1>
 
                       <p className="flex">
@@ -251,6 +237,24 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Travel Listings */}
+      <div className="travelListingsSection">
+        {destinations.map((listing) => (
+          <Link key={listing.slug} href={`/home/${listing.slug}`} passHref>
+            <a>
+              <TravelListingCardComponents
+                title={listing.title}
+                location={listing.location}
+                price={listing.price}
+                description={listing.description}
+                mainImage={listing.image}
+                thumbnailImage={listing.thumbnailImage}
+              />
+            </a>
+          </Link>
+        ))}
       </div>
     </div>
   );
