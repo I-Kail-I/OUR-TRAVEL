@@ -3,7 +3,7 @@ import NegeriDiAtasAwanDestination from "../../../public/assets/popularPlaces/Ne
 import EffielTowerDestination from "../../../public/assets/popularPlaces/Paris/paris.jpeg";
 import IguazuFallDestination from "../../../public/assets/popularPlaces/Iguazu Falls/Iguazu Falls.jpeg";
 import KuilKinKakoDestination from "../../../public/assets/popularPlaces/Kuil kinkako/Kuil kinkako.jpeg";
-import HerengrachtNature from "../../../public/assets/popularnature/Herengracht/Herengracht.jpeg";
+import HerengrachtNature from "../../../public/assets/popularNature/Herengracht/Herengracht.jpeg";
 
 export const listPlace = [
   { placeName: "All" },
