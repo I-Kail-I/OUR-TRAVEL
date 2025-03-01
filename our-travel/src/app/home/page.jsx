@@ -18,7 +18,7 @@ export default function Home({}) {
   const [filledSvg, setFilledSvg] = useState(false);
 
   return (
-    <div className="min-h-screen max-w-screen flex flex-col mb-24 lg:mt-20 md:mb-0">
+    <div className="min-h-screen max-w-screen flex flex-col mb-24">
       {/* Header section */}
       <div className="header flex flex-col mb-8 mt-10">
         <div

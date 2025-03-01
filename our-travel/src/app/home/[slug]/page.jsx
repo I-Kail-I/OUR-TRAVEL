@@ -24,7 +24,7 @@ export default function TravelListingCardPage() {
 
   if (!destination) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center">
+      <div className="container mx-auto px-4 pb-24">
         <h1 className="text-2xl font-bold mb-4">Destination not found!</h1>
         <p className="mb-4">Could not find destination with slug: {slug}</p>
         <Link href="/home" className="text-blue-500 flex items-center">
@@ -35,7 +35,7 @@ export default function TravelListingCardPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 pb-10 lg:pt-20  ">
+    <div className="container mx-auto pb-20 md:pb-5 md:50 lg:pt-10">
       <TravelListingCardComponents
         title={destination.title}
         location={destination.location}
