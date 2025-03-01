@@ -40,7 +40,7 @@ function NavbarDesktop() {
         <input
           type="search"
           placeholder="Search"
-          className="bg-white text-black rounded-lg px-3  py-2 focus:outline-2"
+          className="bg-white text-black rounded-lg px-3 py-2 focus:outline-1 transition-all hover:outline-1"
         />
       </div>
 

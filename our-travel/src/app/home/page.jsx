@@ -1,4 +1,9 @@
 "use client";
+import {
+  listPlace,
+  popularDestinationSection,
+  popularNatureSection,
+} from "../../data/homeData/home";
 import React, { useState } from "react";
 import styles from "./home.module.css";
 import { IoMdAirplane } from "react-icons/io";
@@ -9,63 +14,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Searchbar from "../../components/searchbar/searchbar";
 
-// Popular destination assets
-import HerengrachtDestination from "../../../public/assets/popularPlaces/Herengracht/Herengracht.jpeg";
-import NegeriDiAtasAwanDestination from "../../../public/assets/popularPlaces/Negeri di atas awan/Negeri di atas awan.jpeg";
-import EffielTowerDestination from "../../../public/assets/popularPlaces/Paris/paris.jpeg";
-import IguazuFallDestination from "../../../public/assets/popularPlaces/Iguazu Falls/Iguazu Falls.jpeg";
-import KuilKinKakoDestination from "../../../public/assets/popularPlaces/Kuil kinkako/Kuil kinkako.jpeg";
-
-// Popular nature assets
-import HerengrachtNature from "../../../public/assets/popularNature/Herengracht/Herengracht.jpeg";
-
-export default function Home() {
-  const listPlace = [
-    { placeName: "All" },
-    { placeName: "America" },
-    { placeName: "Europe" },
-    { placeName: "Asia" },
-    { placeName: "Africa" },
-    { placeName: "Middle East" },
-  ];
-
-  const popularDestinationSection = [
-    {
-      image: HerengrachtDestination,
-      title: "Herengracht",
-      text: "Amsterdam, Netherlands",
-    },
-    {
-      image: NegeriDiAtasAwanDestination,
-      title: "Negeri di atas awan",
-      text: "Toraja, Indonesia",
-    },
-    {
-      image: EffielTowerDestination,
-      title: "Eifell tower",
-      text: "Paris, France",
-    },
-    {
-      image: IguazuFallDestination,
-      title: "Iguazu Falls",
-      text: "Argentina Brazil",
-    },
-    {
-      image: KuilKinKakoDestination,
-      title: "kinkako",
-      text: "Kyoto, Japan",
-    },
-  ];
-
-  const popularNatureSection = [
-    {
-      image: HerengrachtNature,
-      title: "Herengracht",
-      location: "Amsterdam, Netherlands",
-      slug: "herengracht",
-    },
-  ];
-
+export default function Home({}) {
   const [filledSvg, setFilledSvg] = useState(false);
 
   return (
@@ -209,7 +158,7 @@ export default function Home() {
                   </Link>
 
                   <div
-                    className="absolute top-4 left-4 bookmarkContainer"
+                    className="absolute top-4 left-4 cursor-pointer bookmarkContainer"
                     onClick={() => setFilledSvg(!filledSvg)}
                   >
                     {filledSvg ? (

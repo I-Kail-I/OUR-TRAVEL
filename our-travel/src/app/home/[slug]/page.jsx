@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useParams } from "next/navigation";
-import { destinations } from "../../data/detailsInfo/destinations";
+import { destinations } from "../../../data/detailsInfo/destinations";
 import TravelListingCardComponents from "../../../components/travelListCard/travelListCard";
 import Link from "next/link";
 import { IoChevronBackOutline } from "react-icons/io5";
@@ -10,13 +10,16 @@ import { IoChevronBackOutline } from "react-icons/io5";
 export default function TravelListingCardPage() {
   const params = useParams();
   const slug = params?.slug;
-  
+
   console.log("Current slug:", slug);
-  console.log("Available destinations:", destinations.map(d => d.slug));
-  
+  console.log(
+    "Available destinations:",
+    destinations.map((d) => d.slug)
+  );
+
   // Find the destination that matches the slug
   const destination = destinations.find((item) => item.slug === slug);
-  
+
   console.log("Found destination:", destination);
 
   if (!destination) {
