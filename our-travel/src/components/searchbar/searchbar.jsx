@@ -42,7 +42,7 @@ export default function SearchBar ({ placeholder = "Discover your next destinati
   };
 
   return (
-    <div className="relative w-full max-w-md flex items-center justify-center">
+    <div className="relative w-full max-w-md flex items-center justify-center z-0">
       <form onSubmit={handleSearch} className="relative">
         <div className="rounded-full bg-gray-200 flex items-center w-100 px-4 py-4 mt-5 border-1 border-transparent hover:border-gray-500 transition-colors duration-500 focus-within:border-gray-500">
           <button type="submit" className="mr-2 text-gray-500">

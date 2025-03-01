@@ -71,9 +71,11 @@ export default function Home({}) {
             <li>Popular Destination </li>
 
             <li>
-              <button className="cursor-pointer hover:text-gray-500 transition-colors">
-                See All
-              </button>
+              <Link href="/home/explore" passHref>
+                <button className="cursor-pointer hover:text-gray-500 transition-colors">
+                  See All
+                </button>
+              </Link>
             </li>
           </ol>
         </div>
@@ -131,9 +133,11 @@ export default function Home({}) {
             <li>Popular Nature</li>
 
             <li>
-              <button className="cursor-pointer hover:text-gray-500 transition-colors">
-                See All
-              </button>
+              <Link href="/home/explore" passHref>
+                <button className="cursor-pointer hover:text-gray-500 transition-colors">
+                  See All
+                </button>
+              </Link>
             </li>
           </ol>
         </div>

@@ -73,6 +73,7 @@ export default function TravelListingCardComponents({
             {title}
           </h2>
         </div>
+
         <div className="flex items-center text-gray-500 mb-5">
           <IoLocationOutline className="me-1" />
           <span>{location}</span>
@@ -84,6 +85,7 @@ export default function TravelListingCardComponents({
             <div className="mr-4 pb-2 border-b-2 border-blue-500 text-blue-500 font-medium">
               Detail
             </div>
+
             <div className="mr-4 pb-2 text-gray-500">Review</div>
             <div className="mr-4 pb-2 text-gray-500">Maps</div>
           </div>

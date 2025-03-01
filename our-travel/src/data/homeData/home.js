@@ -37,7 +37,7 @@ export const popularDestinationSection = [
   },
   {
     image: KuilKinKakoDestination,
-    title: "Kinkaku-ji",
+    title: "kuil kinkako",
     text: "Kyoto, Japan",
   },
 ];
