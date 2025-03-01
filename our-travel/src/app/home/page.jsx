@@ -3,7 +3,7 @@ import {
   listPlace,
   popularDestinationSection,
   popularNatureSection,
-} from "../../data/homeData/home";
+} from "@/data/homeData/home";
 import React, { useState } from "react";
 import styles from "./home.module.css";
 import { IoMdAirplane } from "react-icons/io";
@@ -12,7 +12,7 @@ import { CiBookmark } from "react-icons/ci";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Searchbar from "../../components/searchbar/searchbar";
+import Searchbar from "@/components/searchbar/searchbar";
 
 export default function Home({}) {
   const [filledSvg, setFilledSvg] = useState(false);

@@ -47,6 +47,6 @@ export const popularNatureSection = [
     image: HerengrachtNature,
     title: "Herengracht",
     location: "Amsterdam, Netherlands",
-    slug: "herengracht  yagduw", //tes ini nanti yg spasi nyya itu ada otomatis "-" ini kah
+    slug: "herengracht", 
   },
 ];
