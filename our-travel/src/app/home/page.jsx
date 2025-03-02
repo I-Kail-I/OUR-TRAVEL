@@ -88,9 +88,14 @@ export default function Home({}) {
 
                 return (
                   <motion.div
-                    className="imageDestinationPlace relative w-[280px] flex"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "keyframes", stiffness: 1 }}
+                    className="imageDestinationPlace relative w-[280px] flex rounded-2xl"
+                    whileHover={{ scale: 1.1, boxShadow: "0 0 20px #000" }}
+                    whileTap={{ scale: 1 }}
+                    transition={{
+                      type: "keyframes",
+                      stiffness: 100,
+                      damping: 10,
+                    }}
                     key={index}
                   >
                     <Link href={`/home/${slug}`} passHref>
@@ -149,7 +154,8 @@ export default function Home({}) {
                 <motion.div
                   key={index}
                   className="imageContainer relative"
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 1 }}
                   transition={{ type: "keyframes ", stiffness: 100 }}
                 >
                   <Link href={`/home/${isi.slug}`} passHref>
@@ -157,7 +163,7 @@ export default function Home({}) {
                       src={isi.image}
                       width={300}
                       alt={isi.title}
-                      className="rounded-4xl drop-shadow-2xl shadow-black"
+                      className="rounded-4xl drop-shadow-2xl shadow-black hover:shadow-xl duration-500"
                     />
                   </Link>
 

@@ -82,12 +82,12 @@ export default function TravelListingCardComponents({
         {/* Tabs */}
         <div className="border-b mb-8">
           <div className="flex">
-            <div className="mr-4 pb-2 border-b-2 border-blue-500 text-blue-500 font-medium">
+            <div className="mr-4 pb-2 border-b-2 font-medium cursor-pointer">
               Detail
             </div>
 
-            <div className="mr-4 pb-2 text-gray-500">Review</div>
-            <div className="mr-4 pb-2 text-gray-500">Maps</div>
+            <div className="mr-4 pb-2 text-gray-500 cursor-pointer">Review</div>
+            <div className="mr-4 pb-2 text-gray-500 cursor-pointer">Maps</div>
           </div>
         </div>
 
