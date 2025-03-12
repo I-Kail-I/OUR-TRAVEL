@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function signIn() {
   return (
-    <div className="min-h-screen bg-white flex justify-center">
+    <main className="min-h-screen bg-white flex justify-center">
       <div className="cardLoginContainer flex flex-col min-h-screen w-md shadow-2xl pb-6">
         <div className="z-3 imageSection mb-7 relative">
           <Image
@@ -90,6 +90,6 @@ export default function signIn() {
           </form>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

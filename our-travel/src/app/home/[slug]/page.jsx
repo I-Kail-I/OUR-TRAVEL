@@ -39,7 +39,7 @@ export default function TravelListingCardPage() {
   }
 
   return (
-    <div className="container mx-auto pb-20 md:pb-5 md:50 lg:pt-10">
+    <main className="container mx-auto pb-20 md:pb-5 md:50 lg:pt-10">
       <TravelListingCardComponents
         title={destination.title}
         location={destination.location}
@@ -48,6 +48,6 @@ export default function TravelListingCardPage() {
         mainImage={destination.image}
         thumbnailImage={destination.thumbnailImage}
       />
-    </div>
+    </main>
   );
 }

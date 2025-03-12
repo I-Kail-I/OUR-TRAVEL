@@ -29,7 +29,7 @@ export default function Navbar() {
   }
 
   const mobileNavbarHeight = 0;
-  const desktopNavbarHeight = 80;
+  const desktopNavbarHeight = 70;
 
   return (
     <>

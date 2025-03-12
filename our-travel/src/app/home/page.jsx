@@ -18,7 +18,7 @@ export default function Home({}) {
   const [filledSvg, setFilledSvg] = useState(false);
 
   return (
-    <div className="min-h-screen max-w-screen flex flex-col mb-24">
+    <main className="min-h-screen max-w-screen flex flex-col pb-24">
       {/* Header section */}
       <div className="header flex flex-col mb-8 mt-10">
         <div
@@ -50,10 +50,10 @@ export default function Home({}) {
         className={`${styles.scrollContainer} mt-9 px-4 w-full`}
         id={styles.placeListContainer}
       >
-        <ol className="flex gap-x-8 min-w-full w-full lg:justify-center lg:ms-10">
+        <ol className="flex gap-x-5 min-w-full w-full lg:justify-center lg:ms-10">
           {listPlace.map((isi, isiIndex) => (
             <li key={isiIndex} className="flex-none">
-              <button className="cursor-pointer px-2 py-1 hover:bg-gray-100 rounded-md">
+              <button className="cursor-pointer px-2 py-1 hover:bg-gray-100 rounded-md duration-400">
                 {isi.placeName}
               </button>
             </li>
@@ -194,6 +194,6 @@ export default function Home({}) {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

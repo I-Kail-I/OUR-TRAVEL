@@ -103,7 +103,12 @@ const DestinationCard = ({ destination, mobile }) => {
       <motion.button
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.9 }}
-        transition={{ duration: 0.2, type: "spring", stiffness: 200, damping: 20 }}
+        transition={{
+          duration: 0.2,
+          type: "spring",
+          stiffness: 200,
+          damping: 20,
+        }}
         className="absolute top-4 right-16 bg-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer"
       >
         <IoHeartOutline className="w-4 h-4 text-gray-700" />
@@ -129,8 +134,8 @@ export default function ExplorePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 md:p-8">
+    <main className="min-h-screen bg-gray-50 p-10">
       {isMobile ? <MobileLayout /> : <DesktopLayout />}
-    </div>
+    </main>
   );
 }
